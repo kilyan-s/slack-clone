@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,12 @@
 		3102B06E239FF32500B80EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3102B06C239FF32500B80EA9 /* Main.storyboard */; };
 		3102B070239FF32800B80EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3102B06F239FF32800B80EA9 /* Assets.xcassets */; };
 		3102B073239FF32800B80EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3102B071239FF32800B80EA9 /* LaunchScreen.storyboard */; };
+		3102B07E23A002A600B80EA9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3102B07D23A002A600B80EA9 /* SWRevealViewController.m */; };
+		EBDA60E95114FD5887A6BDF0 /* Pods_slackish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD464340C1DA27947012BF /* Pods_slackish.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EFD464340C1DA27947012BF /* Pods_slackish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slackish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3102B063239FF32500B80EA9 /* slackish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slackish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3102B066239FF32500B80EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3102B068239FF32500B80EA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,11 @@
 		3102B06F239FF32800B80EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3102B072239FF32800B80EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3102B074239FF32800B80EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3102B07B23A002A500B80EA9 /* slackish-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slackish-Bridging-Header.h"; sourceTree = "<group>"; };
+		3102B07C23A002A600B80EA9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		3102B07D23A002A600B80EA9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		368062329CEA7C2A6A34DCFF /* Pods-slackish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.release.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.release.xcconfig"; sourceTree = "<group>"; };
+		A05B339AE73167D5C1E007B3 /* Pods-slackish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.debug.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDA60E95114FD5887A6BDF0 /* Pods_slackish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E904C2DF4D83038D3E9BB14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EFD464340C1DA27947012BF /* Pods_slackish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3102B05A239FF32500B80EA9 = {
 			isa = PBXGroup;
 			children = (
+				3102B07A23A0026400B80EA9 /* SupportingFiles */,
 				3102B065239FF32500B80EA9 /* slackish */,
 				3102B064239FF32500B80EA9 /* Products */,
+				575C842A48188001365AAC1F /* Pods */,
+				1E904C2DF4D83038D3E9BB14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +87,25 @@
 			path = slackish;
 			sourceTree = "<group>";
 		};
+		3102B07A23A0026400B80EA9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3102B07C23A002A600B80EA9 /* SWRevealViewController.h */,
+				3102B07D23A002A600B80EA9 /* SWRevealViewController.m */,
+				3102B07B23A002A500B80EA9 /* slackish-Bridging-Header.h */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		575C842A48188001365AAC1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A05B339AE73167D5C1E007B3 /* Pods-slackish.debug.xcconfig */,
+				368062329CEA7C2A6A34DCFF /* Pods-slackish.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3102B077239FF32800B80EA9 /* Build configuration list for PBXNativeTarget "slackish" */;
 			buildPhases = (
+				1F1336193E96A148EB63F712 /* [CP] Check Pods Manifest.lock */,
 				3102B05F239FF32500B80EA9 /* Sources */,
 				3102B060239FF32500B80EA9 /* Frameworks */,
 				3102B061239FF32500B80EA9 /* Resources */,
+				29357BD3D6003A5297805DDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,6 +140,7 @@
 				TargetAttributes = {
 					3102B062239FF32500B80EA9 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -133,6 +175,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F1336193E96A148EB63F712 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-slackish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29357BD3D6003A5297805DDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slackish/Pods-slackish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slackish/Pods-slackish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slackish/Pods-slackish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3102B05F239FF32500B80EA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,6 +225,7 @@
 				3102B06B239FF32500B80EA9 /* ViewController.swift in Sources */,
 				3102B067239FF32500B80EA9 /* AppDelegate.swift in Sources */,
 				3102B069239FF32500B80EA9 /* SceneDelegate.swift in Sources */,
+				3102B07E23A002A600B80EA9 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +367,10 @@
 		};
 		3102B078239FF32800B80EA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A05B339AE73167D5C1E007B3 /* Pods-slackish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T32TPN22R5;
 				INFOPLIST_FILE = slackish/Info.plist;
@@ -293,6 +380,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kilyansockalingum.slackish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/slackish-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,8 +389,10 @@
 		};
 		3102B079239FF32800B80EA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 368062329CEA7C2A6A34DCFF /* Pods-slackish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T32TPN22R5;
 				INFOPLIST_FILE = slackish/Info.plist;
@@ -311,6 +402,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kilyansockalingum.slackish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SupportingFiles/slackish-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
