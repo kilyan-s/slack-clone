@@ -15,6 +15,7 @@
 		3102B08323A008CB00B80EA9 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102B08223A008CB00B80EA9 /* ChatVC.swift */; };
 		3102B08523A008DD00B80EA9 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102B08423A008DD00B80EA9 /* ChannelVC.swift */; };
 		3102B08C23A00D5700B80EA9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3102B08923A00D5700B80EA9 /* SWRevealViewController.m */; };
+		3102B08E23A01D8F00B80EA9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102B08D23A01D8F00B80EA9 /* GradientView.swift */; };
 		EBDA60E95114FD5887A6BDF0 /* Pods_slackish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD464340C1DA27947012BF /* Pods_slackish.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		3102B08923A00D5700B80EA9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3102B08A23A00D5700B80EA9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3102B08B23A00D5700B80EA9 /* slackish-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "slackish-Bridging-Header.h"; sourceTree = "<group>"; };
+		3102B08D23A01D8F00B80EA9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		368062329CEA7C2A6A34DCFF /* Pods-slackish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.release.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.release.xcconfig"; sourceTree = "<group>"; };
 		A05B339AE73167D5C1E007B3 /* Pods-slackish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.debug.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 		3102B08023A0089400B80EA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3102B08D23A01D8F00B80EA9 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				3102B08323A008CB00B80EA9 /* ChatVC.swift in Sources */,
 				3102B067239FF32500B80EA9 /* AppDelegate.swift in Sources */,
+				3102B08E23A01D8F00B80EA9 /* GradientView.swift in Sources */,
 				3102B08C23A00D5700B80EA9 /* SWRevealViewController.m in Sources */,
 				3102B069239FF32500B80EA9 /* SceneDelegate.swift in Sources */,
 				3102B08523A008DD00B80EA9 /* ChannelVC.swift in Sources */,
