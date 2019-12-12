@@ -31,3 +31,8 @@ let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
 
 
+//Colors
+let PURPLE_PLACEHOLDER = #colorLiteral(red: 0.2588235294, green: 0.3294117647, blue: 0.7254901961, alpha: 0.5)
+
+//Notifications
+let NOTIF_USER_DATA_CHANGED = Notification.Name("notifUserDataChange")
