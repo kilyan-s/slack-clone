@@ -172,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="WOF-31-Rzo" id="u0n-Yj-U14"/>
+                        <outlet property="userImg" destination="GZj-pB-0kn" id="TaE-TE-4bq"/>
                         <segue destination="jMx-77-utW" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="E7v-SH-vP5"/>
                     </connections>
                 </viewController>
