@@ -17,7 +17,7 @@ class UserDataService {
     public private(set) var email = ""
     public private(set) var name  = ""
     
-    func setUserDate(id: String, color: String, avatarName: String, email: String, name: String) {
+    func setUserData(id: String, color: String, avatarName: String, email: String, name: String) {
         self.id = id
         self.avatarColor = color
         self.avatarName = avatarName
@@ -56,5 +56,17 @@ class UserDataService {
 
         let uiColor = UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
         return uiColor
+    }
+    
+    func logoutUser() {
+         self.id = ""
+         self.avatarColor = ""
+         self.avatarName = ""
+         self.name = ""
+         self.email = ""
+        
+        AuthService.instance.isLoggedIn = false
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
     }
 }
