@@ -26,11 +26,21 @@ class CreateAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("View did appear")
+        if UserDataService.instance.avatarName != "" {
+            print("avatar name \(UserDataService.instance.avatarName)")
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
+    
     @IBAction func closePressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
     
     @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
     @IBAction func pickBgColorPressed(_ sender: Any) {
