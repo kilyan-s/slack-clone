@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -229,6 +229,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="jMx-77-utW" eventType="touchUpInside" id="IL9-EX-4Db"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGN-PQ-9oQ">
                                 <rect key="frame" x="82" y="380" width="250" height="25"/>
@@ -285,6 +288,10 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="53d-DK-WYd">
+                                <rect key="frame" x="188.5" y="239.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -296,13 +303,18 @@
                             <constraint firstItem="YUt-Rv-9xz" firstAttribute="top" secondItem="0SG-ce-rg1" secondAttribute="bottom" constant="40" id="Ey5-iL-ZYM"/>
                             <constraint firstItem="mkt-Nl-aeU" firstAttribute="centerX" secondItem="6vl-ug-gYc" secondAttribute="centerX" id="O7M-re-PQh"/>
                             <constraint firstItem="Pcw-M1-at1" firstAttribute="top" secondItem="Swy-En-DpD" secondAttribute="top" constant="20" id="OsJ-Cm-eDa"/>
+                            <constraint firstItem="53d-DK-WYd" firstAttribute="centerY" secondItem="6vl-ug-gYc" secondAttribute="centerY" constant="-190" id="RyA-FJ-0KJ"/>
                             <constraint firstItem="Swy-En-DpD" firstAttribute="trailing" secondItem="Pcw-M1-at1" secondAttribute="trailing" constant="20" id="ZHQ-ab-Ii8"/>
+                            <constraint firstItem="53d-DK-WYd" firstAttribute="centerX" secondItem="6vl-ug-gYc" secondAttribute="centerX" id="l5U-gj-TVX"/>
                             <constraint firstItem="BGN-PQ-9oQ" firstAttribute="top" secondItem="mkt-Nl-aeU" secondAttribute="bottom" id="zxC-q9-eUV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Swy-En-DpD"/>
                     </view>
                     <navigationItem key="navigationItem" id="2ny-FN-bvl"/>
                     <connections>
+                        <outlet property="passwordTxt" destination="1Gv-Um-bXb" id="E4q-H3-dbV"/>
+                        <outlet property="spinner" destination="53d-DK-WYd" id="hkE-1g-wPW"/>
+                        <outlet property="usernameTxt" destination="xeO-Qh-oEL" id="j7A-lW-9rV"/>
                         <segue destination="wdh-HM-l5K" kind="presentation" identifier="toCreateAccount" modalPresentationStyle="fullScreen" id="Zjl-ZX-Q9X"/>
                     </connections>
                 </viewController>
