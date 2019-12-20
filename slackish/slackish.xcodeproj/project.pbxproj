@@ -19,6 +19,8 @@
 		3102B09123A0289A00B80EA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102B09023A0289A00B80EA9 /* Constants.swift */; };
 		3102B09323A02C9E00B80EA9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102B09223A02C9E00B80EA9 /* LoginVC.swift */; };
 		3102B09523A03CBC00B80EA9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102B09423A03CBC00B80EA9 /* CreateAccountVC.swift */; };
+		3169545123AD8492004FFE62 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169545023AD8492004FFE62 /* MessageService.swift */; };
+		3169545323AD84F0004FFE62 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169545223AD84F0004FFE62 /* Channel.swift */; };
 		316A8D2A23A2A58200577D72 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316A8D2823A2A58200577D72 /* ProfileVC.swift */; };
 		316A8D2B23A2A58200577D72 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316A8D2923A2A58200577D72 /* ProfileVC.xib */; };
 		318B7E1823A18F3E009E7E0E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7E1723A18F3E009E7E0E /* AuthService.swift */; };
@@ -27,6 +29,7 @@
 		318B7E1E23A1B6B7009E7E0E /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7E1D23A1B6B7009E7E0E /* AvatarPickerVC.swift */; };
 		318B7E2023A1B84D009E7E0E /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7E1F23A1B84D009E7E0E /* AvatarCell.swift */; };
 		318B7E2223A1C9E5009E7E0E /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7E2123A1C9E5009E7E0E /* CircleImage.swift */; };
+		31D0166D23AD8EA8002571EC /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0166C23AD8EA8002571EC /* ChannelCell.swift */; };
 		EBDA60E95114FD5887A6BDF0 /* Pods_slackish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD464340C1DA27947012BF /* Pods_slackish.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,8 @@
 		3102B09023A0289A00B80EA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3102B09223A02C9E00B80EA9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3102B09423A03CBC00B80EA9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		3169545023AD8492004FFE62 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		3169545223AD84F0004FFE62 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		316A8D2823A2A58200577D72 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		316A8D2923A2A58200577D72 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		318B7E1723A18F3E009E7E0E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		318B7E1D23A1B6B7009E7E0E /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		318B7E1F23A1B84D009E7E0E /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		318B7E2123A1C9E5009E7E0E /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		31D0166C23AD8EA8002571EC /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		368062329CEA7C2A6A34DCFF /* Pods-slackish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.release.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.release.xcconfig"; sourceTree = "<group>"; };
 		A05B339AE73167D5C1E007B3 /* Pods-slackish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.debug.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +154,7 @@
 				318B7E1923A19D96009E7E0E /* RoundedButton.swift */,
 				318B7E1F23A1B84D009E7E0E /* AvatarCell.swift */,
 				318B7E2123A1C9E5009E7E0E /* CircleImage.swift */,
+				31D0166C23AD8EA8002571EC /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 		3102B08123A0089A00B80EA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3169545223AD84F0004FFE62 /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 			children = (
 				318B7E1723A18F3E009E7E0E /* AuthService.swift */,
 				318B7E1B23A1AE10009E7E0E /* UserDataService.swift */,
+				3169545023AD8492004FFE62 /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,8 +325,11 @@
 				3102B09323A02C9E00B80EA9 /* LoginVC.swift in Sources */,
 				316A8D2A23A2A58200577D72 /* ProfileVC.swift in Sources */,
 				3102B08E23A01D8F00B80EA9 /* GradientView.swift in Sources */,
+				3169545123AD8492004FFE62 /* MessageService.swift in Sources */,
+				3169545323AD84F0004FFE62 /* Channel.swift in Sources */,
 				3102B08C23A00D5700B80EA9 /* SWRevealViewController.m in Sources */,
 				3102B09523A03CBC00B80EA9 /* CreateAccountVC.swift in Sources */,
+				31D0166D23AD8EA8002571EC /* ChannelCell.swift in Sources */,
 				318B7E1C23A1AE10009E7E0E /* UserDataService.swift in Sources */,
 				318B7E1A23A19D96009E7E0E /* RoundedButton.swift in Sources */,
 				3102B09123A0289A00B80EA9 /* Constants.swift in Sources */,

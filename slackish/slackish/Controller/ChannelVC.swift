@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
-
+class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var userImg: CircleImage!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var tableview: UITableView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
@@ -54,6 +54,24 @@ class ChannelVC: UIViewController {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        MessageService.instance.channels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            return cell
+        } else {
+            return UITableViewCell()
         }
     }
     
