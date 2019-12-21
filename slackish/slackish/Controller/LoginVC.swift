@@ -25,6 +25,9 @@ class LoginVC: UIViewController {
         
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: PURPLE_PLACEHOLDER])
         passwordTxt.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: PURPLE_PLACEHOLDER])
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapClose))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func closePressed(_ sender: Any) {
@@ -54,5 +57,11 @@ class LoginVC: UIViewController {
     
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
+    }
+    
+    
+    
+    @objc func tapClose() {
+        view.endEditing(true)
     }
 }
