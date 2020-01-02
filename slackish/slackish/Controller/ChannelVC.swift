@@ -29,6 +29,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         setupUserInfo()
     }
     
+    @IBAction func addChannelPressed(_ sender: Any) {
+        let AddChannel = AddChannelVC()
+        AddChannel.modalPresentationStyle = .custom
+        present(AddChannel, animated: true, completion: nil)
+    }
+    
     @objc func userDataDidChange(_ notif: Notification) {
         setupUserInfo()
     }
