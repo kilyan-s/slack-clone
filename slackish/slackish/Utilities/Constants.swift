@@ -42,3 +42,5 @@ let PURPLE_PLACEHOLDER = #colorLiteral(red: 0.2588235294, green: 0.3294117647, b
 
 //Notifications
 let NOTIF_USER_DATA_CHANGED = Notification.Name("notifUserDataChange")
+let NOTIF_CHANNELS_LOADED = Notification.Name("notifChannelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("notifChannelSelected")
