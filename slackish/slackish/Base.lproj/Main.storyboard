@@ -62,10 +62,35 @@
                                     <constraint firstItem="oSc-mg-3QL" firstAttribute="leading" secondItem="oZs-ox-xj1" secondAttribute="leading" constant="20" id="oJS-BF-eNE"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRu-oR-onY">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CD6-r2-edT"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5a-Rk-9m1">
+                                <rect key="frame" x="364" y="822" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="qhi-9c-VqC"/>
+                                    <constraint firstAttribute="height" constant="30" id="vkc-I6-RHV"/>
+                                </constraints>
+                                <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="sendBtnPressed:" destination="OhF-NN-LMA" eventType="touchUpInside" id="07a-SL-a13"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="oZs-ox-xj1" firstAttribute="top" secondItem="k2l-e9-PWK" secondAttribute="top" id="0cw-gM-yiN"/>
+                            <constraint firstItem="hRu-oR-onY" firstAttribute="leading" secondItem="67W-mt-obf" secondAttribute="leading" id="KUf-SB-kGC"/>
+                            <constraint firstItem="67W-mt-obf" firstAttribute="trailing" secondItem="hRu-oR-onY" secondAttribute="trailing" id="VLW-xd-o0g"/>
+                            <constraint firstItem="C5a-Rk-9m1" firstAttribute="centerY" secondItem="hRu-oR-onY" secondAttribute="centerY" id="We7-v0-T6D"/>
+                            <constraint firstItem="67W-mt-obf" firstAttribute="trailing" secondItem="C5a-Rk-9m1" secondAttribute="trailing" constant="20" id="eR3-31-jov"/>
+                            <constraint firstItem="hRu-oR-onY" firstAttribute="bottom" secondItem="67W-mt-obf" secondAttribute="bottom" id="fcg-VK-9Ub"/>
                             <constraint firstItem="oZs-ox-xj1" firstAttribute="leading" secondItem="67W-mt-obf" secondAttribute="leading" id="ksu-5X-DTh"/>
                             <constraint firstItem="oZs-ox-xj1" firstAttribute="trailing" secondItem="67W-mt-obf" secondAttribute="trailing" id="m8o-Gl-Mfh"/>
                         </constraints>
@@ -74,6 +99,7 @@
                     <connections>
                         <outlet property="channelNameLbl" destination="3dC-V6-7sZ" id="yUd-Dy-8Wx"/>
                         <outlet property="menuBtn" destination="oSc-mg-3QL" id="1GI-7R-8SL"/>
+                        <outlet property="messageTxt" destination="hRu-oR-onY" id="gpu-Bl-cSC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ1-fI-5rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -611,6 +637,7 @@
         <image name="closeButton" width="28" height="28"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>

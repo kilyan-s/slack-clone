@@ -34,6 +34,7 @@
 		31D0166D23AD8EA8002571EC /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0166C23AD8EA8002571EC /* ChannelCell.swift */; };
 		31D38A4C23BE821A0023EEAD /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D38A4B23BE821A0023EEAD /* SocketService.swift */; };
 		31D38A4E23BE9C830023EEAD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D38A4D23BE9C830023EEAD /* Message.swift */; };
+		31D38A5023BEA4DB0023EEAD /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D38A4F23BEA4DB0023EEAD /* KeyboardBoundView.swift */; };
 		EBDA60E95114FD5887A6BDF0 /* Pods_slackish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD464340C1DA27947012BF /* Pods_slackish.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		31D0166C23AD8EA8002571EC /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		31D38A4B23BE821A0023EEAD /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		31D38A4D23BE9C830023EEAD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		31D38A4F23BEA4DB0023EEAD /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		368062329CEA7C2A6A34DCFF /* Pods-slackish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.release.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.release.xcconfig"; sourceTree = "<group>"; };
 		A05B339AE73167D5C1E007B3 /* Pods-slackish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slackish.debug.xcconfig"; path = "Target Support Files/Pods-slackish/Pods-slackish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 				318B7E1F23A1B84D009E7E0E /* AvatarCell.swift */,
 				318B7E2123A1C9E5009E7E0E /* CircleImage.swift */,
 				31D0166C23AD8EA8002571EC /* ChannelCell.swift */,
+				31D38A4F23BEA4DB0023EEAD /* KeyboardBoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				3102B08323A008CB00B80EA9 /* ChatVC.swift in Sources */,
 				3102B067239FF32500B80EA9 /* AppDelegate.swift in Sources */,
+				31D38A5023BEA4DB0023EEAD /* KeyboardBoundView.swift in Sources */,
 				318B7E2023A1B84D009E7E0E /* AvatarCell.swift in Sources */,
 				3102B09323A02C9E00B80EA9 /* LoginVC.swift in Sources */,
 				316A8D2A23A2A58200577D72 /* ProfileVC.swift in Sources */,

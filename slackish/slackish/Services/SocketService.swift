@@ -20,7 +20,7 @@ class SocketService: NSObject {
         socket = self.manager.defaultSocket
     }
     
-    
+    //CONNECTION
     func establishConnection() {
         socket?.connect()
     }
@@ -29,6 +29,7 @@ class SocketService: NSObject {
         socket?.disconnect()
     }
     
+    //CHANNELS
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
         socket?.emit("newChannel", channelName, channelDescription)
         completion(true)
@@ -45,6 +46,15 @@ class SocketService: NSObject {
             
             completion(true)
         })
+    }
+    
+    //MESSAGE
+    func addMessage(message: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
+        let user = UserDataService.instance
+        
+        socket?.emit("newMessage", message, userId, channelId, user.name, user.avatarName, user.avatarColor)
+        
+        completion(true)
     }
     
 }

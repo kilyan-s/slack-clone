@@ -12,9 +12,13 @@ class ChatVC: UIViewController {
     
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
+    @IBOutlet weak var messageTxt: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //bind view to keyboard so that it scrolls when the keyboard appear
+        view.bindToKeyboard()
+        
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         self.view.addGestureRecognizer((self.revealViewController()?.tapGestureRecognizer())!)
@@ -30,6 +34,25 @@ class ChatVC: UIViewController {
             }
         }
         
+        //Gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    
+    @IBAction func sendBtnPressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            guard let message = messageTxt.text , messageTxt.text != "" else { return }
+            
+            SocketService.instance.addMessage(message: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
+                if success {
+                    self.messageTxt.text = ""
+                    self.messageTxt.resignFirstResponder()
+                }
+            }
+        }
     }
     
     @objc func userDataDidChange(_ notification: Notification) {
@@ -42,6 +65,10 @@ class ChatVC: UIViewController {
     
     @objc func channelSelected(_ notification: Notification) {
         updateWithChannel()
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
     
     func updateWithChannel() {
