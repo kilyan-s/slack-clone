@@ -16,6 +16,8 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableview.delegate = self
+        tableview.dataSource = self
         
         //Change drawer width
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
@@ -23,6 +25,13 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //Observer for notification (create account)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_CHANGED, object: nil)
         
+        
+        SocketService.instance.getChannel { (succes) in
+            if succes {
+                print("new channel")
+                self.tableview.reloadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,7 +77,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        MessageService.instance.channels.count
+        return MessageService.instance.channels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
