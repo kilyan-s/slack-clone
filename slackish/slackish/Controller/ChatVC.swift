@@ -8,16 +8,23 @@
 
 import UIKit
 
-class ChatVC: UIViewController {
-    
+class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var messageTxt: UITextField!
+    @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //bind view to keyboard so that it scrolls when the keyboard appear
         view.bindToKeyboard()
+        
+        tableview.delegate = self
+        tableview.dataSource = self
+        
+        //automatic sizing for cells
+        tableview.estimatedRowHeight = 80
+        tableview.rowHeight = UITableView.automaticDimension
         
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
@@ -97,7 +104,29 @@ class ChatVC: UIViewController {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         //API call to get the messages
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
-            
+            if success {
+                self.tableview.reloadData()
+            }
         }
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as? MessageCell {
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
 }
