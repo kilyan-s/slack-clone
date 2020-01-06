@@ -48,5 +48,4 @@ class ProfileVC: UIViewController {
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }

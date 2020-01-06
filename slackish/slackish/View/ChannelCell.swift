@@ -13,7 +13,6 @@ class ChannelCell: UITableViewCell {
     //Outlets
     @IBOutlet weak var channelNameLbl: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,9 +39,5 @@ class ChannelCell: UITableViewCell {
                 channelNameLbl.font = UIFont(name: "HelveticaNeue-Bold", size: 19)
             }
         }
-        
     }
-    
-    
-
 }

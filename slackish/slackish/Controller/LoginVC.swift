@@ -59,8 +59,6 @@ class LoginVC: UIViewController {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
     }
     
-    
-    
     @objc func tapClose() {
         view.endEditing(true)
     }

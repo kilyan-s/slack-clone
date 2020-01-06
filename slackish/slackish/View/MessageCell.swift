@@ -43,7 +43,5 @@ class MessageCell: UITableViewCell {
             let finaleDate = dateFormatter.string(from: finalDate)
             timestampLbl.text = finaleDate
         }
-        
-        
     }
 }

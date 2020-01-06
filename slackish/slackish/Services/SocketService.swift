@@ -70,16 +70,6 @@ class SocketService: NSObject {
             let newMessage = Message(message: messageBody, username: username, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timestamp: timestamp)
             
             completion(newMessage)
-            
-//            //check if incomming message is in the same channel as us
-//            if(channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn) {
-//                MessageService.instance.messages.append(newMessage)
-//
-//                completion(true)
-//            } else {
-//                //Not the same channel
-//                completion(false)
-//            }
         })
     }
     
@@ -90,5 +80,4 @@ class SocketService: NSObject {
             completion(typingUsers)
         })
     }
-    
 }

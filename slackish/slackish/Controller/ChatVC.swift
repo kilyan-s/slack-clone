@@ -43,16 +43,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_CHANGED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
-        //Socket new chat message
-//        SocketService.instance.getChatMessage { (success) in
-//            if success {
-//                self.tableview.reloadData()
-//
-//                let endIndexPath = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-//                self.tableview.scrollToRow(at: endIndexPath, at: .bottom, animated: true)
-//            }
-//        }
-        
         SocketService.instance.getChatMessage { (newMessage) in
             if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
@@ -104,9 +94,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         view.addGestureRecognizer(tapGesture)
         
     }
-    
-    
-    
+
     @IBAction func sendBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             guard let channelId = MessageService.instance.selectedChannel?.id else { return }
@@ -140,7 +128,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             isTyping = true
         }
     }
-    
     
     @objc func userDataDidChange(_ notification: Notification) {
         if AuthService.instance.isLoggedIn {
@@ -180,7 +167,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     func getMessages() {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         //API call to get the messages
@@ -190,8 +176,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MessageService.instance.messages.count

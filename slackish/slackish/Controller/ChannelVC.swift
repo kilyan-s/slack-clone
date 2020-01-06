@@ -72,7 +72,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
-        
     }
     
     func setupUserInfo() {

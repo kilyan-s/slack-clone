@@ -33,7 +33,6 @@ class AddChannelVC: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
     }
     
     func setupView() {
