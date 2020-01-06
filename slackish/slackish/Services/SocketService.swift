@@ -57,7 +57,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getChatMessage(completion: @escaping CompletionHandler) {
+    func getChatMessage(completion: @escaping (_ newMessage: Message) -> Void ){
         socket?.on("messageCreated", callback: { (dataArray, ack) in
             guard let messageBody = dataArray[0] as? String else { return }
             guard let channelId = dataArray[2] as? String else { return }
@@ -67,16 +67,19 @@ class SocketService: NSObject {
             guard let id = dataArray[6] as? String else { return }
             guard let timestamp = dataArray[7] as? String else { return }
             
-            //check if incomming message is in the same channel as us
-            if(channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn) {
-                let newMessage = Message(message: messageBody, username: username, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timestamp: timestamp)
-                MessageService.instance.messages.append(newMessage)
-                
-                completion(true)
-            } else {
-                //Not the same channel
-                completion(false)
-            }
+            let newMessage = Message(message: messageBody, username: username, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timestamp: timestamp)
+            
+            completion(newMessage)
+            
+//            //check if incomming message is in the same channel as us
+//            if(channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn) {
+//                MessageService.instance.messages.append(newMessage)
+//
+//                completion(true)
+//            } else {
+//                //Not the same channel
+//                completion(false)
+//            }
         })
     }
     

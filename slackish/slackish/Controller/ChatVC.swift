@@ -44,10 +44,20 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         //Socket new chat message
-        SocketService.instance.getChatMessage { (success) in
-            if success {
-                self.tableview.reloadData()
+//        SocketService.instance.getChatMessage { (success) in
+//            if success {
+//                self.tableview.reloadData()
+//
+//                let endIndexPath = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+//                self.tableview.scrollToRow(at: endIndexPath, at: .bottom, animated: true)
+//            }
+//        }
+        
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
                 
+                self.tableview.reloadData()
                 let endIndexPath = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
                 self.tableview.scrollToRow(at: endIndexPath, at: .bottom, animated: true)
             }

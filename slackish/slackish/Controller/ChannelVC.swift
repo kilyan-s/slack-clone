@@ -26,8 +26,16 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_CHANGED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         
+        //Socket
         SocketService.instance.getChannel { (succes) in
             if succes {
+                self.tableview.reloadData()
+            }
+        }
+        
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.unreadChannels.append(newMessage.channelId)
                 self.tableview.reloadData()
             }
         }
@@ -101,6 +109,20 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let channel = MessageService.instance.channels[indexPath.row]
         MessageService.instance.selectedChannel = channel
+        
+        //Reconfigure cell on click if channel had unread message
+        if MessageService.instance.unreadChannels.count > 0 {
+            //Remove selected channel id from list of unread channels before updating the tableview
+            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter{$0 != channel.id}
+        }
+        
+        let index = IndexPath(row: indexPath.row, section: 0)
+        //calls configureCell()
+        tableView.reloadRows(at: [index], with: .none)
+        //After reload cell isn't selected anymore. Need to manually select the cell
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none)
+        
+        
         NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         self.revealViewController()?.revealToggle(animated: true)
