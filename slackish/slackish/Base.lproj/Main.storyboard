@@ -144,12 +144,20 @@
                                     <action selector="sendBtnPressed:" destination="OhF-NN-LMA" eventType="touchUpInside" id="07a-SL-a13"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZV-Ys-8r8">
+                                <rect key="frame" x="20" y="807" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="oZs-ox-xj1" firstAttribute="top" secondItem="k2l-e9-PWK" secondAttribute="top" id="0cw-gM-yiN"/>
+                            <constraint firstItem="hRu-oR-onY" firstAttribute="top" secondItem="PZV-Ys-8r8" secondAttribute="bottom" constant="5" id="233-Yg-RKc"/>
                             <constraint firstItem="67W-mt-obf" firstAttribute="trailing" secondItem="1gf-Kf-MyI" secondAttribute="trailing" id="8cf-17-sYb"/>
                             <constraint firstItem="hRu-oR-onY" firstAttribute="leading" secondItem="67W-mt-obf" secondAttribute="leading" id="KUf-SB-kGC"/>
+                            <constraint firstItem="PZV-Ys-8r8" firstAttribute="leading" secondItem="67W-mt-obf" secondAttribute="leading" constant="20" id="PX1-2V-bBo"/>
                             <constraint firstItem="67W-mt-obf" firstAttribute="trailing" secondItem="hRu-oR-onY" secondAttribute="trailing" id="VLW-xd-o0g"/>
                             <constraint firstItem="C5a-Rk-9m1" firstAttribute="centerY" secondItem="hRu-oR-onY" secondAttribute="centerY" id="We7-v0-T6D"/>
                             <constraint firstItem="67W-mt-obf" firstAttribute="trailing" secondItem="C5a-Rk-9m1" secondAttribute="trailing" constant="20" id="eR3-31-jov"/>
@@ -168,6 +176,7 @@
                         <outlet property="messageTxt" destination="hRu-oR-onY" id="gpu-Bl-cSC"/>
                         <outlet property="sendButton" destination="C5a-Rk-9m1" id="r3p-Em-gUv"/>
                         <outlet property="tableview" destination="1gf-Kf-MyI" id="jup-lG-hBw"/>
+                        <outlet property="typingUserLbl" destination="PZV-Ys-8r8" id="CR6-tL-kne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ1-fI-5rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -77,9 +77,14 @@ class SocketService: NSObject {
                 //Not the same channel
                 completion(false)
             }
-            
-            
-            
+        })
+    }
+    
+    
+    func getTypingUsers(_ completion: @escaping (_ typingUsers: [String: String]) -> Void) {
+        socket?.on("userTypingUpdate", callback: { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String: String] else { return }
+            completion(typingUsers)
         })
     }
     
